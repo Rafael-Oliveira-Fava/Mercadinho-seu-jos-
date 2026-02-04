@@ -1,0 +1,8 @@
+
+{
+  "name": "Mercadinho do Seu José - Oficial",
+  "description": "Site premium para o mercadinho do Seu José com inteligência artificial para receitas e delivery.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
