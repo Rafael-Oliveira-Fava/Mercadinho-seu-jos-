@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AppSection, Product, CartItem, User, Address } from './types.ts';
@@ -152,7 +151,8 @@ const App = () => {
         )}
       </AnimatePresence>
 
-      <main className="flex-grow">
+      {/* Main Content com padding inferior para mobile navbar */}
+      <main className="flex-grow pb-20 lg:pb-0">
         <AnimatePresence mode="wait">
           {activeSection === AppSection.Home && (
             <motion.div key="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pt-24">

@@ -1,9 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Mercadinho do Seu José - Oficial</title>
     
     <script>
@@ -25,6 +26,9 @@
                 light: '#fdfbf7',
                 accent: '#d4a373'
               }
+            },
+            padding: {
+              'safe': 'env(safe-area-inset-bottom)'
             }
           }
         }
@@ -32,7 +36,15 @@
     </script>
     
     <style>
-      body { background-color: #fdfbf7; color: #1a4731; font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+      body { 
+        background-color: #fdfbf7; 
+        color: #1a4731; 
+        font-family: 'Inter', sans-serif; 
+        margin: 0; 
+        padding: 0; 
+        overflow-x: hidden;
+        padding-bottom: env(safe-area-inset-bottom);
+      }
       .font-serif { font-family: 'Playfair Display', serif; }
       .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
       .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -40,6 +52,24 @@
       ::-webkit-scrollbar { width: 6px; }
       ::-webkit-scrollbar-track { background: #f1f1f1; }
       ::-webkit-scrollbar-thumb { background: #d4a373; border-radius: 10px; }
+      
+      /* Safe area support for iOS */
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+      
+      /* Prevent scrolling issues on mobile */
+      html {
+        overflow-x: hidden;
+        position: relative;
+      }
+      
+      /* Better mobile tap targets */
+      @media (max-width: 1024px) {
+        button, a {
+          -webkit-tap-highlight-color: rgba(212, 163, 115, 0.2);
+        }
+      }
     </style>
 
     <script type="importmap">
